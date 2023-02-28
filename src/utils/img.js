@@ -217,6 +217,7 @@ const lines = [
 ]
 
 const CImage = async ({txt, ctgs = [], imgPath, req}) => {
+	ctgs = ctgs.slice(0, 3)
 	const Ddate = new Date()
 	const months = ['January', 'Февраль', 'Март', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	try {
@@ -279,6 +280,7 @@ const CImage = async ({txt, ctgs = [], imgPath, req}) => {
 		})
 
 		let nextCtgPositionX = 60
+		
 		ctgs?.length > 0 && ctgs.forEach((ctg) => {
 			const {left, width} = textWrapper({
 				image,

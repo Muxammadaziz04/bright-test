@@ -24,6 +24,11 @@ const writeDataNews = async (req, res) => {
 		locale: 'vi',  
 		trim: true        
 	})
+
+	if(typeof req.body.categories === 'string') {
+		req.body.categories = [req.body.categories]
+	}
+	
 	const data = req.body
 	data.img = imgLink
 	data.date = new Date()
