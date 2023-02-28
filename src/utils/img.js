@@ -279,7 +279,7 @@ const CImage = async ({txt, ctgs = [], imgPath, req}) => {
 		})
 
 		let nextCtgPositionX = 60
-		ctgs.forEach((ctg) => {
+		ctgs?.length > 0 && ctgs.forEach((ctg) => {
 			const {left, width} = textWrapper({
 				image,
 				font: notoSans,
